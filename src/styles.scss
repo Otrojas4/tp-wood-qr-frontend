@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+$theme-colors: (
+  primary:#40261D,
+  secondary: #BFA59B,
+  success: #8C5D42,
+  warning: #73544D,
+  info: #8C5D42,
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+.card {
+  @extend .card;
+  border-radius: 25px;
+}
