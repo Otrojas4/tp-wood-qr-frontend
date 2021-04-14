@@ -15,3 +15,10 @@ $theme-colors: (
   @extend .card;
   border-radius: 25px;
 }
+
+
+@media (max-width: 992px) {
+  .hide-less-lg {
+    display: none;
+  }
+}
