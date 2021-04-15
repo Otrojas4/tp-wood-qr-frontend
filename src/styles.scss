@@ -22,3 +22,30 @@ $theme-colors: (
     display: none;
   }
 }
+
+.form-control {
+  @extend .form-control;
+  @extend .px-3;
+  border-radius: 17px;
+}
+
+.btn {
+  @extend .btn;
+  @extend .px-3;
+  border-radius: 17px;
+}
+
+.link-navbar {
+  color: #fff;
+  cursor: pointer;
+}
+
+.link-navbar:hover {
+  color: rgb(204, 200, 200);
+}
+
+@media (max-width: 1140px) {
+  .show-only-in-xl {
+    display: none;
+  }
+}

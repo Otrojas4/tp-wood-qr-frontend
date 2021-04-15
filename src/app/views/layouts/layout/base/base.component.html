@@ -1,0 +1,53 @@
+<nav class="navbar navbar-dark bg-warning">
+
+  <span class="navbar-brand" routerLink="/" routerLinkActive="router-link-active">
+    <img src="assets/images/goodwood-logo.png" height="70px">
+    <span>GoodWood</span>
+  </span>
+
+  <div class="container">
+    <span class="link-navbar" href="#">
+      <i-feather name="home"></i-feather>
+      <span class="show-only-in-xl">Inicio</span>
+    </span>
+
+    <span *ngIf="isLogged()" class="link-navbar" href="#">
+      <i-feather name="box"></i-feather>
+      <span class="show-only-in-xl">Mueble</span>
+    </span>
+
+    <span *ngIf="isLogged()" class="link-navbar" href="#">
+      <i-feather name="sunrise"></i-feather>
+      <span class="show-only-in-xl">Transformación Primaria</span>
+    </span>
+
+    <span *ngIf="isLogged()" class="link-navbar" href="#">
+      <i-feather name="sunset"></i-feather>
+      <span class="show-only-in-xl">Transformación Secundaria</span>
+    </span>
+
+    <span *ngIf="isLogged() && isAdmin()" class="link-navbar" href="#">
+      <i-feather name="user-plus"></i-feather>
+      <span class="show-only-in-xl">Agregar Usuario</span>
+    </span>
+
+
+    <div class="d-flex justify-content-end">
+      <span *ngIf="!isLogged()" class="link-navbar" routerLink="/auth">
+        <i-feather name="log-in"></i-feather>
+        <span class="show-only-in-xl">Iniciar Sesión</span>
+      </span>
+
+      <span *ngIf="isLogged()" class="link-navbar" href="#">
+        <i-feather name="log-out"></i-feather>
+        <span class="show-only-in-xl" (click)="logout()">Cerrar Sesión</span>
+      </span>
+    </div>
+
+  </div>
+
+
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
