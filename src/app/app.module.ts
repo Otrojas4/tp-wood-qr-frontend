@@ -8,7 +8,7 @@ import { LayoutModule } from './views/layouts/layout/layout.module';
 import { JwtModule } from '@auth0/angular-jwt';
 
 export function tokenGetter() {
-  return localStorage.getItem("access_token_wood");
+  return localStorage.getItem('access_token_wood');
 }
 
 @NgModule({
@@ -17,17 +17,17 @@ export function tokenGetter() {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ["https://tp-wood-api-rest.azurewebsites.net", "http://localhost:8585"],
-        disallowedRoutes: [""],
+        allowedDomains: ['localhost:8585', 'tp-wood-api-rest.azurewebsites.net'],//agregar http no funcionara
+        disallowedRoutes: [''],
       },
     }),
     BrowserAnimationsModule,
     LayoutModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

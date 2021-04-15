@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -23,7 +23,8 @@ export class AuthService {
         map((response: any) => {
           const res = response;
           if (res) {
-            localStorage.setItem('access_token_wood', res.token);
+            const tokenToStore = res.token.replace('Bearer ','');
+            localStorage.setItem('access_token_wood', tokenToStore);
             this.decodedToken = this.jwtHelper.decodeToken(res.token);
             this.router.navigate(['']);
           }

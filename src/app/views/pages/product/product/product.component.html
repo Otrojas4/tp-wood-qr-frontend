@@ -1,0 +1,59 @@
+
+<div class="container">
+  <h3 class="my-2">Muebles</h3>
+
+  <button routerLink='/product/create' routerLinkActive="router-link-active"  class="btn btn-secondary">
+    <i-feather name="plus-circle"></i-feather>
+    <span>Crear Mueble</span>
+  </button>
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive my-2">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Código de Producto</th>
+              <th scope="col">QTF</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Aserradero</th>
+              <th scope="col">F. Elboración</th>
+              <th scope="col">Cod Plancha</th>
+              <th scope="col">Tiempo Elaboración</th>
+              <th scope="col">Tipo Madera</th>
+              <th scope="col">Cod TP</th>
+              <th scope="col">Cod TS</th>
+              <th scope="col">Info</th>
+              <th scope="col">Editar</th>
+              <th scope="col">QR Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of madProducts">
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.codProduct}}</td>
+              <td>{{item.codForestGuide}}</td>
+              <td>{{item.productName}}</td>
+              <td>{{item.sawmillName}}</td>
+              <td>{{item.dateOfElaboration}}</td>
+              <td>{{item.codPlate}}</td>
+              <td>{{item.elaborationTime}}</td>
+              <td>{{item.woodType}}</td>
+              <td>{{item.primaryTrans.codTransPri}}</td>
+              <td>{{item.secondaryTrans.codTransSec}}</td>
+              <td>Ver</td>
+              <td>Editar</td>
+              <td>[QR CODE]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -23,6 +23,11 @@ $theme-colors: (
   }
 }
 
+.btn-secondary {
+  @extend .btn-secondary;
+  color: #fff;
+}
+
 .form-control {
   @extend .form-control;
   @extend .px-3;

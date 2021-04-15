@@ -1,17 +1,17 @@
 <nav class="navbar navbar-dark bg-warning">
 
-  <span class="navbar-brand" routerLink="/" routerLinkActive="router-link-active">
-    <img src="assets/images/goodwood-logo.png" height="70px">
-    <span>GoodWood</span>
-  </span>
-
   <div class="container">
-    <span class="link-navbar" href="#">
+    <span class="navbar-brand col-12 col-md-auto" routerLink="/" routerLinkActive="router-link-active">
+      <img src="assets/images/goodwood-logo.png" height="70px">
+      <span>GoodWood</span>
+    </span>
+
+    <span class="link-navbar" routerLink="/">
       <i-feather name="home"></i-feather>
       <span class="show-only-in-xl">Inicio</span>
     </span>
 
-    <span *ngIf="isLogged()" class="link-navbar" href="#">
+    <span *ngIf="isLogged()" class="link-navbar"routerLink="/product">
       <i-feather name="box"></i-feather>
       <span class="show-only-in-xl">Mueble</span>
     </span>

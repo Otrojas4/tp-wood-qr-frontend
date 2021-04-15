@@ -9,8 +9,8 @@ const routes: Routes = [
     children: [
       { path: 'auth', loadChildren: () => import('./views/pages/authentication/authentication.module').then(m => m.AuthenticationModule) },
       { path: '', loadChildren: () => import('./views/pages/home/home.module').then(m => m.HomeModule) },
-      // { path: 'auth', loadChildren: () => import('./views/pages/authentication/authentication.module').then(m => m.AuthenticationModule) },
-      // { path: 'dashboard', loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard]},
+      { path: 'product', loadChildren: () => import('./views/pages/product/product.module').then(m => m.ProductModule) },
+      // { path: 'test', loadChildren: () => import('./views/pages/test/test.module').then(m => m.TestModule), canActivate: [AuthGuard]},
       { path: '', redirectTo: '', pathMatch: 'full' },
     ]
   }
