@@ -17,6 +17,7 @@ export function tokenGetter() {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     JwtModule.forRoot({
@@ -26,7 +27,6 @@ export function tokenGetter() {
         disallowedRoutes: [''],
       },
     }),
-    BrowserAnimationsModule,
     LayoutModule,
   ],
   providers: [],

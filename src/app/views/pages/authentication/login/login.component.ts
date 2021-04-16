@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import showToast from 'src/app/utils/toast';
 import { LoginForm } from 'src/_models/login-form';
 import { AuthService } from 'src/_services/auth.service';
 
@@ -30,9 +31,9 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(loginRequest).subscribe(
       next => {
-
+        showToast('success', 'Bienvenido!');
       }, error => {
-
+        showToast('error', 'Error!');
       }
     );
   }

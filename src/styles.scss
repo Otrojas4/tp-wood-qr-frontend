@@ -10,6 +10,7 @@ $theme-colors: (
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.scss";
 
 .card {
   @extend .card;
@@ -54,3 +55,30 @@ $theme-colors: (
     display: none;
   }
 }
+
+div, h1,h2,h3,h4,h5 {
+  color: #362823;
+}
+
+
+/**
+STYLING DATE PICKER
+**/
+
+.bs-datepicker-body table td.week span
+{
+  color: #40261D !important;
+}
+
+.bs-datepicker-body table td span.selected,
+.bs-datepicker-head,
+.bs-datepicker-head, .bs-datepicker button:active,
+.bs-datepicker-body table td.selected span,
+.bs-datepicker-body table td span[class*="select-"]:after,
+.bs-datepicker-body table td[class*="select-"] span:after,
+.bs-datepicker-body table td.active-week span:hover
+{
+  background-color: #40261D !important;
+}
+
+///

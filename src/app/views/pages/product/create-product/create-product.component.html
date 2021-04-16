@@ -1,3 +1,91 @@
-<p>
-  create-product works!
-</p>
+<div class="container">
+
+  <h3 class="my-2">Crear Mueble</h3>
+
+  <div class="d-flex justify-content-center my-4">
+    <div class="card col-12 col-md-10 col-xl-7">
+      <div class="card-body">
+        <form  [formGroup]="createProductForm" (submit)="createProduct()">
+          <div class="form-group">
+            <label for="inputCod">Código de Producto</label>
+            <input type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
+          </div>
+
+          <div class="form-group">
+            <label for="unputcodForestGuide">Guía de Transporte Forestal</label>
+            <input type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Nombre del Producto</label>
+            <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="productName" maxlength="50">
+          </div>
+
+          <div class="form-group">
+            <label for="inputsawmillName">Nombre del aserradero</label>
+            <input type="text" class="form-control" id="inputsawmillName" aria-describedby="inputsawmillName" formControlName="sawmillName" maxlength="50">
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Fecha de Elaboración</label>
+            <input type="text"
+            class="form-control"
+            bsDatepicker
+            [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+            [maxDate]="maxDate"
+            formControlName="dateOfElaboration"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="inputcodPlate">Código de Plancha</label>
+            <input type="text" class="form-control" id="inputcodPlate" aria-describedby="inputcodPlate" formControlName="codPlate" maxlength="60">
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Tiempo de elaboración</label>
+            <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="elaborationTime">
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Tipo de Madera</label>
+            <select class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="woodType">
+              <option *ngFor="let item of woodTypes" [value]="item">{{item}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Transformación Primaria</label>
+            <select class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="idPri">
+              <option *ngFor="let item of primaryTransList" [value]="item.idPri">{{item.codTransPri}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Transformación Secundaria</label>
+            <select type="text" class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="idSec">
+              <option *ngFor="let item of secondaryTransList" [value]="item.idSec">{{item.codTransSec}}</option>
+            </select>
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="inputProductName">FOTO</label>
+            <input type="text" class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="">
+          </div> -->
+
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary mx-2" [disabled]="!createProductForm.valid">Crear Mueble</button>
+            <button class="btn btn-warning mx-2" routerLink="/product">Cancelar</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
