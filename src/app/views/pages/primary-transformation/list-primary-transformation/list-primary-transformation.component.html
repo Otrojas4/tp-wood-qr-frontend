@@ -1,0 +1,48 @@
+
+<div class="container">
+  <h3 class="my-2">Transformación Primaria</h3>
+
+  <button routerLink='/primary-transformation/create' routerLinkActive="router-link-active"  class="btn btn-secondary">
+    <i-feather name="plus-circle"></i-feather>
+    <span>Añadir Transformación Primaria</span>
+  </button>
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive my-2">
+        <table class="table table-bordered table-hover">
+          <thead class="table-header-color">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Código</th>
+              <th scope="col">Código de Maquinaria 1</th>
+              <th scope="col">Eficiencia de Maquinaria 1</th>
+              <th scope="col">Código de Maquinaria 2</th>
+              <th scope="col">Eficiencia de Maquinaria 2</th>
+              <th scope="col">F. Elaboración</th>
+              <th scope="col">Tiempo Elaboración</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of primaryTransformations">
+              <th scope="row">{{item.idPri}}</th>
+              <td>{{item.codTransPri}}</td>
+              <td>{{item.codMachineryOne}}</td>
+              <td>{{item.percentageOne}}</td>
+              <td>{{item.codMachineryTwo}}</td>
+              <td>{{item.percentageTwo}}</td>
+              <td>{{item.dateElaborationP}}</td>
+              <td>{{item.timeElaborationP}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>

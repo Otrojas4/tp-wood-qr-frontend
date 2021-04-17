@@ -10,6 +10,7 @@ const routes: Routes = [
       { path: 'auth', loadChildren: () => import('./views/pages/authentication/authentication.module').then(m => m.AuthenticationModule) },
       { path: '', loadChildren: () => import('./views/pages/home/home.module').then(m => m.HomeModule) },
       { path: 'product', loadChildren: () => import('./views/pages/product/product.module').then(m => m.ProductModule) },
+      { path: 'primary-transformation', loadChildren: () => import('./views/pages/primary-transformation/primary-transformation.module').then(m => m.PrimaryTransformationModule) },
       // { path: 'test', loadChildren: () => import('./views/pages/test/test.module').then(m => m.TestModule), canActivate: [AuthGuard]},
       { path: '', redirectTo: '', pathMatch: 'full' },
     ]
