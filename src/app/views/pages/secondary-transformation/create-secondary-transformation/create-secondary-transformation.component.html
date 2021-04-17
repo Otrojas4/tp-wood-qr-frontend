@@ -5,15 +5,15 @@
   <div class="d-flex justify-content-center my-4">
     <div class="card col-12 col-md-10 col-xl-7">
       <div class="card-body">
-        <form  [formGroup]="createPrimaryTransForm" (submit)="createPrimaryTrans()">
+        <form  [formGroup]="createSecondaryTransForm" (submit)="createSecondaryTrans()">
           <div class="form-group">
-            <label for="codTransPri">Código</label>
-            <input type="text" class="form-control" id="codTransPri" formControlName="codTransPri" maxlength="60">
+            <label for="codTransSec">Código</label>
+            <input type="text" class="form-control" id="codTransSec" formControlName="codTransSec" maxlength="60">
           </div>
 
           <div class="form-group">
-            <label for="codMachineryOne">Código de Maquinaria 1</label>
-            <input type="text" class="form-control" id="codMachineryOne"  formControlName="codMachineryOne" maxlength="60">
+            <label for="codMachinaryOne">Código de Maquinaria 1</label>
+            <input type="text" class="form-control" id="codMachinaryOne"  formControlName="codMachinaryOne" maxlength="60">
           </div>
 
           <div class="form-group">
@@ -22,8 +22,8 @@
           </div>
 
           <div class="form-group">
-            <label for="codMachineryTwo">Código de Maquinaria 2</label>
-            <input type="text" class="form-control" id="codMachineryTwo" formControlName="codMachineryTwo" maxlength="60">
+            <label for="codMachinaryTwo">Código de Maquinaria 2</label>
+            <input type="text" class="form-control" id="codMachinaryTwo" formControlName="codMachinaryTwo" maxlength="60">
           </div>
 
           <div class="form-group">
@@ -32,24 +32,24 @@
           </div>
 
           <div class="form-group">
-            <label for="dateElaborationP">Fecha de Elaboración</label>
+            <label for="dateElaborations">Fecha de Elaboración</label>
             <input type="text"
-            id="dateElaborationP"
+            id="dateElaborations"
             class="form-control"
             bsDatepicker
             [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
             [maxDate]="maxDate"
-            formControlName="dateElaborationP"
+            formControlName="dateElaborations"
             >
           </div>
 
           <div class="form-group">
-            <label for="timeElaborationP">Tiempo de elaboración</label>
-            <input type="text" class="form-control" id="timeElaborationP" aria-describedby="inputProductName" formControlName="timeElaborationP">
+            <label for="timeElaborations">Tiempo de elaboración</label>
+            <input type="text" class="form-control" id="timeElaborations" aria-describedby="inputProductName" formControlName="timeElaborations">
           </div>
 
           <div class="d-flex justify-content-center">
-            <button class="btn btn-primary mx-2" [disabled]="!createPrimaryTransForm.valid">Crear Transformación</button>
+            <button class="btn btn-primary mx-2" [disabled]="!createSecondaryTransForm.valid">Crear Transformación</button>
             <button class="btn btn-warning mx-2" routerLink="/primary-transformation">Cancelar</button>
           </div>
 
