@@ -9,4 +9,5 @@ export interface MadProductToCreate {
   woodType: string;
   idPri: number;
   idSec: number;
+  imageBase: string;
 }

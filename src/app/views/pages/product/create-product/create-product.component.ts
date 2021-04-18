@@ -16,6 +16,7 @@ import { SecondaryTransService } from 'src/_services/secondary-trans.service';
 })
 export class CreateProductComponent implements OnInit {
 
+  imgString: string;
 
   woodTypes = ['Nogal', 'Olmo', 'Caoba', 'Cerezo', 'Roble', 'Olivo', 'Abeto', 'Pino', 'Cedro'];
 
@@ -27,6 +28,7 @@ export class CreateProductComponent implements OnInit {
 
   secondaryTransList: Array<any> = [];
 
+  url: string;
 
   constructor(
     private localeService: BsLocaleService,
@@ -55,6 +57,7 @@ export class CreateProductComponent implements OnInit {
       woodType: new FormControl('', [Validators.required]),
       idPri: new FormControl(0, [Validators.required, Validators.min(1)]),
       idSec: new FormControl(0, [Validators.required, Validators.min(1)]),
+      imageBase: new FormControl(0, [Validators.required]),
     });
   }
 
@@ -64,6 +67,8 @@ export class CreateProductComponent implements OnInit {
       madProductToCreate.elaborationTime = parseFloat(parseFloat(madProductToCreate.elaborationTime.toString()).toFixed(2));
       madProductToCreate.idPri = parseInt(madProductToCreate.idPri.toString());
       madProductToCreate.idSec = parseInt(madProductToCreate.idSec.toString());
+
+      //madProductToCreate.imageBase = '';
 
       this.productMadService.createProductMad(madProductToCreate).subscribe(
         (res) => {
@@ -76,6 +81,29 @@ export class CreateProductComponent implements OnInit {
       );
     }
 
+  }
+
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0] && event.target.files[0].type.match('image/jpeg')) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (event : any) => {
+        const splitImgBase = event.target.result as string;
+
+        const stringToSend = splitImgBase;
+
+        this.imgString = stringToSend;
+
+        const imageBase = this.createProductForm.controls['imageBase'];
+        imageBase.setValue(this.imgString);
+
+        this.url = event.target.result;
+
+        document.getElementById('uploadInput').style.backgroundImage=`url(${this.url})`;
+      }
+    }
   }
 
   getData(): void {

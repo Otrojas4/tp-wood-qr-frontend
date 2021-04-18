@@ -8,6 +8,7 @@ import { esLocale } from 'ngx-bootstrap/locale';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewProductComponent } from './view-product/view-product.component';
 defineLocale('es', esLocale);
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateProductComponent
+  },
+  {
+    path: 'view/:id',
+    component: ViewProductComponent
   }
 ];
 
@@ -31,7 +36,8 @@ const routes: Routes = [
   ],
   declarations: [
     ProductComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    ViewProductComponent
   ],
   providers: [
     BsLocaleService

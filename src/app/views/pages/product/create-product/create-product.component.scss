@@ -1,0 +1,35 @@
+.uploadImg {
+  background-image: url("../../../../../assets/images/upload-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.imageTagUpload {
+  min-height: 200px;
+}
+
+.max-size {
+  width: 100%;
+  min-height: 120px;
+  cursor: pointer;
+}
+
+
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.hoverable{
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #000;
+}
+
+
+#fileInput{
+  display: none;
+}

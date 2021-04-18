@@ -8,7 +8,7 @@ export interface MadProduct {
   codPlate: string;
   elaborationTime: number;
   woodType: string;
-  photo: any,
+  photo: string,
   primaryTrans: {
       idPri: number;
       codTransPri: string;

@@ -45,7 +45,7 @@
               <td>{{item.woodType}}</td>
               <td>{{item.primaryTrans.codTransPri}}</td>
               <td>{{item.secondaryTrans.codTransSec}}</td>
-              <td><button class="btn btn-primary"><i-feather name="eye"></i-feather></button></td>
+              <td><button (click)="viewProduct(item)" class="btn btn-primary"><i-feather name="eye"></i-feather></button></td>
               <td><button class="btn btn-info"><i-feather name="edit"></i-feather></button></td>
               <td>[QR CODE]</td>
             </tr>

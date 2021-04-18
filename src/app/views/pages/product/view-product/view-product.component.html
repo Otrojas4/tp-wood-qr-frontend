@@ -1,0 +1,60 @@
+<div class="container my-3">
+
+  <div class="row justify-content-center">
+    <div class="col-12">
+
+    </div>
+
+    <div class="card col-12">
+      <div class="card-body">
+        <h3 class="card-title">{{madProductFinded.productName}}</h3>
+
+        <div class="row">
+
+          <div class="col-12 col-xl-6">
+            <img src="{{madProductFinded.photo}}" height="350px" >
+            <div class="mt-3">
+              <label><h5>Código: {{madProductFinded.codProduct}}</h5></label>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-6">
+            <div>
+              <label>Sus etapas de transformación son provenientes de:</label>
+            </div>
+            <div class="my-3">
+              <div class="my-3">
+                <label>
+                  <i-feather name="plus"></i-feather>
+                  {{madProductFinded.primaryTrans.codTransPri}}
+                </label>
+              </div>
+              <div class="my-3">
+                <label>
+                  <i-feather name="plus"></i-feather>
+                  {{madProductFinded.secondaryTrans.codTransSec}}
+                </label>
+              </div>
+              <div class="my-3">
+                <label>
+                  <i-feather name="plus"></i-feather>
+                  Fecha de Elaboración:
+                  {{madProductFinded.dateOfElaboration | date: 'dd/MM/yyyy'}}
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>

@@ -19,4 +19,8 @@ export class ProductMadService {
     return this.http.post(`${environment.backendUrlMain}/mad-product`, madProductToCreate);
   }
 
+  getOneProductMad(id: number): Observable<any> {
+    return this.http.get(`${environment.backendUrlMain}/mad-product/${id}`);
+  }
+
 }
