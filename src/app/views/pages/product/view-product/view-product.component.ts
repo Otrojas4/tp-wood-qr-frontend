@@ -12,7 +12,7 @@ export class ViewProductComponent implements OnInit {
 
   loading: boolean = false;
   id: number;
-  madProductFinded: MadProduct = {} as MadProduct;
+  madProductFinded: MadProduct = {primaryTrans: {}, secondaryTrans: {}} as MadProduct;
 
   constructor(private activatedRoute: ActivatedRoute, private productMadService: ProductMadService) { }
 
@@ -26,7 +26,7 @@ export class ViewProductComponent implements OnInit {
     this.productMadService.getOneProductMad(this.id).subscribe(
       (res: MadProduct) => {
         this.madProductFinded = res;
-        console.log(this.madProductFinded);
+
         this.loading = !this.loading;
       },
       (err) => {

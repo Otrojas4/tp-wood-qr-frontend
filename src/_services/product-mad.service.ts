@@ -23,4 +23,8 @@ export class ProductMadService {
     return this.http.get(`${environment.backendUrlMain}/mad-product/${id}`);
   }
 
+  deleteProductMad(id: number): Observable<any> {
+    return this.http.delete(`${environment.backendUrlMain}/mad-product/${id}`);
+  }
+
 }
