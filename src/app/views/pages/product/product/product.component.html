@@ -47,8 +47,8 @@
               <td>{{item.primaryTrans.codTransPri}}</td>
               <td>{{item.secondaryTrans.codTransSec}}</td>
               <td><button (click)="viewProduct(item)" class="btn btn-primary"><i-feather name="eye"></i-feather></button></td>
-              <td><button (click)="deleteProduct(item)" class="btn btn-warning"><i-feather name="trash"></i-feather></button></td>
               <td><button class="btn btn-info"><i-feather name="edit"></i-feather></button></td>
+              <td><button (click)="deleteProduct(item)" class="btn btn-warning"><i-feather name="trash"></i-feather></button></td>
               <td><img src="{{getImageById(item.id)}}" height="70px"></td>
             </tr>
           </tbody>
