@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { FeatherModule } from 'angular-feather';
-import { Home, LogIn, LogOut, Box, Sunrise, Sunset, UserPlus, PlusCircle } from 'angular-feather/icons';
+import { Home, LogIn, LogOut, Box, Sunrise, Sunset, UserPlus, PlusCircle, Edit, Delete } from 'angular-feather/icons';
 
 const icons = {
   Home,
@@ -11,7 +11,9 @@ const icons = {
   Sunrise,
   Sunset,
   UserPlus,
-  PlusCircle
+  PlusCircle,
+  Edit,
+  Delete
 };
 
 @NgModule({

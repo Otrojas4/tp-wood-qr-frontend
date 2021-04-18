@@ -1,0 +1,44 @@
+
+<div class="container">
+  <h3 class="my-2">Usuarios</h3>
+
+  <button routerLink='/secondary-transformation/create' routerLinkActive="router-link-active"  class="btn btn-secondary">
+    <i-feather name="plus-circle"></i-feather>
+    <span>Añadir Transformación Secundaria</span>
+  </button>
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive my-2">
+        <table class="table table-bordered table-hover">
+          <thead class="table-header-color">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Rol</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Eliminar</th>
+              <th scope="col">Tiempo Elaboración</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of userList">
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.name}}</td>
+              <td>{{item.type}}</td>
+              <td>{{item.status}}</td>
+              <td><i-feather name="delete"></i-feather></td>
+              <td><i-feather name="edit"></i-feather></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
