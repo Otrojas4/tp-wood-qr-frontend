@@ -24,4 +24,8 @@ export class UserListComponent implements OnInit {
     );
   }
 
+  getState(status: string) {
+    return status === '1' ? 'Activo':'Inactivo';
+  }
+
 }

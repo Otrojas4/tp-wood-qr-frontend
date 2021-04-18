@@ -3,23 +3,30 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { IconsModule } from '../../icons/icons.module';
+import { UserCreateComponent } from './user-create/user-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '',
     component: UserListComponent
   },
-
+  {
+    path: 'create',
+    component: UserCreateComponent
+  },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule,
     IconsModule
   ],
   declarations: [
-    UserListComponent
+    UserListComponent,
+    UserCreateComponent
   ]
 })
 export class UserModule { }
