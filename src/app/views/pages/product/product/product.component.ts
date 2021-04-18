@@ -30,6 +30,10 @@ export class ProductComponent implements OnInit {
     );
   }
 
+  getImageById(id: number) {
+    return `https://tp-wood-images-node.azurewebsites.net/api-images-qr/${id}`;
+  }
+
   viewProduct(item: MadProduct) {
     this.router.navigate([`/product/view/${item.id}`]);
   }
