@@ -9,21 +9,53 @@
           <div class="form-group">
             <label for="inputCod">Código de Producto</label>
             <input type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('codProduct').touched &&
+            createProductForm.get('codProduct').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="unputcodForestGuide">Guía de Transporte Forestal</label>
             <input type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('codForestGuide').touched &&
+            createProductForm.get('codForestGuide').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="inputProductName">Nombre del Producto</label>
             <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="productName" maxlength="50">
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('productName').touched &&
+            createProductForm.get('productName').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="inputsawmillName">Nombre del aserradero</label>
             <input type="text" class="form-control" id="inputsawmillName" aria-describedby="inputsawmillName" formControlName="sawmillName" maxlength="50">
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('sawmillName').touched &&
+            createProductForm.get('sawmillName').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
@@ -35,16 +67,40 @@
             [maxDate]="maxDate"
             formControlName="dateOfElaboration"
             >
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('dateOfElaboration').touched &&
+            createProductForm.get('dateOfElaboration').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="inputcodPlate">Código de Plancha</label>
             <input type="text" class="form-control" id="inputcodPlate" aria-describedby="inputcodPlate" formControlName="codPlate" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('codPlate').touched &&
+            createProductForm.get('codPlate').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="inputProductName">Tiempo de elaboración</label>
             <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="elaborationTime">
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('elaborationTime').touched &&
+            createProductForm.get('elaborationTime').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
@@ -52,6 +108,14 @@
             <select class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="woodType">
               <option *ngFor="let item of woodTypes" [value]="item">{{item}}</option>
             </select>
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('woodType').touched &&
+            createProductForm.get('woodType').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
@@ -59,6 +123,14 @@
             <select class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="idPri">
               <option *ngFor="let item of primaryTransList" [value]="item.idPri">{{item.codTransPri}}</option>
             </select>
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('idPri').touched &&
+            createProductForm.get('idPri').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
@@ -66,6 +138,14 @@
             <select type="text" class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="idSec">
               <option *ngFor="let item of secondaryTransList" [value]="item.idSec">{{item.codTransSec}}</option>
             </select>
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('idSec').touched &&
+            createProductForm.get('idSec').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div  class="form-group">
@@ -75,6 +155,13 @@
                 <input type="file" class="custom-file-input max-size" id="customFile" (change)="onSelectFile($event)" accept="image/jpeg">
               </div>
             </div>
+            <small class="form-text text-muted"
+            *ngIf="
+            createProductForm.get('imageBase').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="d-flex justify-content-center">

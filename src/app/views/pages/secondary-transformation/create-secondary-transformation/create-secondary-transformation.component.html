@@ -9,26 +9,66 @@
           <div class="form-group">
             <label for="codTransSec">Código</label>
             <input type="text" class="form-control" id="codTransSec" formControlName="codTransSec" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('codTransSec').touched &&
+            createSecondaryTransForm.get('codTransSec').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="codMachinaryOne">Código de Maquinaria 1</label>
             <input type="text" class="form-control" id="codMachinaryOne"  formControlName="codMachinaryOne" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('codMachinaryOne').touched &&
+            createSecondaryTransForm.get('codMachinaryOne').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="percentageOne">Eficiencia de Maquinaria </label>
             <input type="text" class="form-control" id="percentageOne"  formControlName="percentageOne" maxlength="4">
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('percentageOne').touched &&
+            createSecondaryTransForm.get('percentageOne').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="codMachinaryTwo">Código de Maquinaria 2</label>
             <input type="text" class="form-control" id="codMachinaryTwo" formControlName="codMachinaryTwo" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('codMachinaryTwo').touched &&
+            createSecondaryTransForm.get('codMachinaryTwo').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="percentageTwo">Eficiencia de Maquinaria 2</label>
             <input type="text" class="form-control" id="percentageTwo"  formControlName="percentageTwo" maxlength="4">
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('percentageTwo').touched &&
+            createSecondaryTransForm.get('percentageTwo').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
@@ -41,11 +81,27 @@
             [maxDate]="maxDate"
             formControlName="dateElaborations"
             >
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('dateElaborations').touched &&
+            createSecondaryTransForm.get('dateElaborations').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="form-group">
             <label for="timeElaborations">Tiempo de elaboración</label>
             <input type="text" class="form-control" id="timeElaborations" aria-describedby="inputProductName" formControlName="timeElaborations">
+            <small class="form-text text-muted"
+            *ngIf="
+            createSecondaryTransForm.get('timeElaborations').touched &&
+            createSecondaryTransForm.get('timeElaborations').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
           </div>
 
           <div class="d-flex justify-content-center">

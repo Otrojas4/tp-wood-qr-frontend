@@ -1,3 +1,175 @@
-<p>
-  edit-product works!
-</p>
+<div *ngIf="!loading" class="container">
+
+  <h3 class="my-2">Editar Mueble</h3>
+
+  <div class="d-flex justify-content-center my-4">
+    <div class="card col-12 col-md-10 col-xl-7">
+      <div class="card-body">
+        <form  [formGroup]="editProductForm">
+          <div class="form-group">
+            <label for="inputCod">Código de Producto</label>
+            <input type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
+
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('codProduct').touched &&
+            editProductForm.get('codProduct').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="unputcodForestGuide">Guía de Transporte Forestal</label>
+            <input type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('codForestGuide').touched &&
+            editProductForm.get('codForestGuide').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Nombre del Producto</label>
+            <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="productName" maxlength="50">
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('productName').touched &&
+            editProductForm.get('productName').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputsawmillName">Nombre del aserradero</label>
+            <input type="text" class="form-control" id="inputsawmillName" aria-describedby="inputsawmillName" formControlName="sawmillName" maxlength="50">
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('sawmillName').touched &&
+            editProductForm.get('sawmillName').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Fecha de Elaboración</label>
+            <input type="text"
+            class="form-control"
+            bsDatepicker
+            [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+            [maxDate]="maxDate"
+            formControlName="dateOfElaboration"
+            >
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('dateOfElaboration').touched &&
+            editProductForm.get('dateOfElaboration').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputcodPlate">Código de Plancha</label>
+            <input type="text" class="form-control" id="inputcodPlate" aria-describedby="inputcodPlate" formControlName="codPlate" maxlength="60">
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('codPlate').touched &&
+            editProductForm.get('codPlate').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Tiempo de elaboración</label>
+            <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="elaborationTime">
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('elaborationTime').touched &&
+            editProductForm.get('elaborationTime').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Tipo de Madera</label>
+            <select class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="woodType">
+              <option *ngFor="let item of woodTypes" [value]="item">{{item}}</option>
+            </select>
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('woodType').touched &&
+            editProductForm.get('woodType').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Transformación Primaria</label>
+            <select class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="idPri">
+              <option *ngFor="let item of primaryTransList" [value]="item.idPri">{{item.codTransPri}}</option>
+            </select>
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('idPri').touched &&
+            editProductForm.get('idPri').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProductName">Transformación Secundaria</label>
+            <select type="text" class="form-control" id="inputProductName" aria-describedby="inpuName" formControlName="idSec">
+              <option *ngFor="let item of secondaryTransList" [value]="item.idSec">{{item.codTransSec}}</option>
+            </select>
+            <small class="form-text text-muted"
+            *ngIf="
+            editProductForm.get('idSec').touched &&
+            editProductForm.get('idSec').hasError('required')
+            "
+            >
+            Este campo es requerido
+            </small>
+          </div>
+
+          <!-- <div  class="form-group">
+            <label>Subir imagen (jpg) (no mayor a 300x300)</label>
+            <div class="round-card p-4 d-flex justify-content-center imageTagUpload">
+              <div #uploadInput id="uploadInput" class="uploadImg max-size">
+                <input type="file" class="custom-file-input max-size" id="customFile" (change)="onSelectFile($event)" accept="image/jpeg">
+              </div>
+            </div>
+          </div> -->
+
+          <div class="d-flex justify-content-center">
+            <button (click)="applyEditions()" class="btn btn-primary mx-2" [disabled]="!editProductForm.valid">Actualizar</button>
+            <button class="btn btn-warning mx-2" routerLink="/product">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
