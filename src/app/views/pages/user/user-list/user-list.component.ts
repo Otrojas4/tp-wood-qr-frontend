@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import showToast from 'src/app/utils/toast';
 import { UserWood } from 'src/_models/user-wood';
 import { UserWoodService } from 'src/_services/user-wood.service';
 
@@ -11,7 +13,7 @@ export class UserListComponent implements OnInit {
 
   userList: Array<UserWood> = [];
 
-  constructor(private userWood: UserWoodService) { }
+  constructor(private userWood: UserWoodService, private router: Router) { }
 
   ngOnInit() {
     this.userWood.getUserList().subscribe(
@@ -26,6 +28,19 @@ export class UserListComponent implements OnInit {
 
   getState(status: string) {
     return status === '1' ? 'Activo':'Inactivo';
+  }
+
+  deleteUser(id: number) {
+    this.userWood.deleteUser(id).subscribe(
+      (res) => {
+        this.userList = this.userList.filter(x => x.id !== id);
+        showToast('success', 'Se eliminó con exito');
+        this.router.navigate(['/user-management']);
+      },
+      (err) => {
+        showToast('error', 'Error de servidor');
+      }
+    );
   }
 
 }

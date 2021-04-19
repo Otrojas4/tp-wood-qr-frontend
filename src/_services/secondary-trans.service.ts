@@ -19,4 +19,8 @@ export class SecondaryTransService {
     return this.http.post(`${environment.backendUrlMain}/secondary-trans`, primaryTransformationToCreate);
   }
 
+  deleteSecondaryTrans(id: number) {
+    return this.http.delete(`${environment.backendUrlMain}/secondary-trans/${id}`);
+  }
+
 }

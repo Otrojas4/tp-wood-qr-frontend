@@ -24,6 +24,7 @@
               <th scope="col">Eficiencia de Maquinaria 2</th>
               <th scope="col">F. Elaboración</th>
               <th scope="col">Tiempo Elaboración</th>
+              <th scope="col">Eliminar</th>
 
             </tr>
           </thead>
@@ -37,6 +38,7 @@
               <td>{{item.percentageTwo}}</td>
               <td>{{item.dateElaborations}}</td>
               <td>{{item.timeElaborations}}</td>
+              <td><button (click)="deleteSecondaryTrans(item.idSec)" class="btn btn-warning"><i-feather name="delete"></i-feather></button></td>
             </tr>
           </tbody>
         </table>

@@ -19,4 +19,8 @@ export class UserWoodService {
     return this.http.post(`${environment.backendUrlMain}/user/create`, userWood);
   }
 
+  deleteUser(id: number) {
+    return this.http.delete(`${environment.backendUrlMain}/user/${id}`);
+  }
+
 }

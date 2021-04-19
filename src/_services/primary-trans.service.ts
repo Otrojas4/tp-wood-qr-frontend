@@ -19,4 +19,8 @@ export class PrimaryTransService {
     return this.http.post(`${environment.backendUrlMain}/primary-trans`, primaryTransformation);
   }
 
+  deletePrimaryTrans(id: number) {
+    return this.http.delete(`${environment.backendUrlMain}/primary-trans/${id}`);
+  }
+
 }
