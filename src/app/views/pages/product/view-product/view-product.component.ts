@@ -14,6 +14,11 @@ export class ViewProductComponent implements OnInit {
   id: number;
   madProductFinded: MadProduct = {primaryTrans: {}, secondaryTrans: {}} as MadProduct;
 
+  showPrimary: boolean = false;
+
+  showSecondary: boolean = false;
+
+
   constructor(private activatedRoute: ActivatedRoute, private productMadService: ProductMadService) { }
 
   ngOnInit() {
@@ -33,6 +38,14 @@ export class ViewProductComponent implements OnInit {
 
       }
     );
+  }
+
+  toglePrimary() {
+    this.showPrimary = !this.showPrimary;
+  }
+
+  togleSecondary() {
+    this.showSecondary = !this.showSecondary;
   }
 
 }

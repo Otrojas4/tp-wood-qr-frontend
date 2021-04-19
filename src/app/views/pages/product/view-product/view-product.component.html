@@ -24,24 +24,41 @@
             </div>
             <div class="my-3">
               <div class="my-3">
-                <label>
+                <h5 (click)="toglePrimary()" class="cursor">
                   <i-feather name="plus"></i-feather>
-                  {{madProductFinded.primaryTrans.codTransPri}}
-                </label>
+                  Transferencia Primaria
+                </h5>
+                <div *ngIf="showPrimary">
+                  <p><strong>ID: </strong>{{madProductFinded.primaryTrans.idPri}}</p>
+                  <p><strong>Código de Maquinaria 1: </strong> {{madProductFinded.primaryTrans.codMachineryOne}}</p>
+                  <p><strong>Código de Maquinaria 2: </strong> {{madProductFinded.primaryTrans.codMachineryTwo}}</p>
+                  <p><strong>Código de Transferencia: </strong>{{madProductFinded.primaryTrans.codTransPri}}</p>
+                  <p><strong>Fecha de elaboración: </strong>{{madProductFinded.primaryTrans.dateElaborationP | date: 'dd/MM/yyyy'}}</p>
+                  <!-- <p>Porcentaje de maquina 1: {{madProductFinded.primaryTrans.percentageOne}}</p>
+                  <p>Porcentaje de maquina 2: {{madProductFinded.primaryTrans.percentageTwo}}</p> -->
+                  <p><strong>Tiempo de elaboración: </strong> {{madProductFinded.primaryTrans.timeElaborationP}}</p>
+                </div>
+
+
               </div>
+
               <div class="my-3">
-                <label>
+                <h5 (click)="togleSecondary()" class="cursor">
                   <i-feather name="plus"></i-feather>
-                  {{madProductFinded.secondaryTrans.codTransSec}}
-                </label>
+                  Transferencia Secundaria
+                </h5>
+                <div *ngIf="showSecondary">
+                  <p><strong>ID: </strong>{{madProductFinded.secondaryTrans.idSec}}</p>
+                  <p><strong>Código de Maquinaria 1: </strong> {{madProductFinded.secondaryTrans.codMachinaryOne}}</p>
+                  <p><strong>Código de Maquinaria 2: </strong> {{madProductFinded.secondaryTrans.codMachinaryTwo}}</p>
+                  <p><strong>Código de Transferencia: </strong>{{madProductFinded.secondaryTrans.codTransSec}}</p>
+                  <p><strong>Fecha de elaboración: </strong>{{madProductFinded.secondaryTrans.dateElaborations | date: 'dd/MM/yyyy'}}</p>
+                  <!-- <p>Porcentaje de maquina 1: {{madProductFinded.secondaryTrans.percentageOne}}</p>
+                  <p>Porcentaje de maquina 2: {{madProductFinded.secondaryTrans.percentageTwo}}</p> -->
+                  <p><strong>Tiempo de elaboración: </strong> {{madProductFinded.secondaryTrans.timeElaborations}}</p>
+                </div>
               </div>
-              <div class="my-3">
-                <label>
-                  <i-feather name="plus"></i-feather>
-                  Fecha de Elaboración:
-                  {{madProductFinded.dateOfElaboration | date: 'dd/MM/yyyy'}}
-                </label>
-              </div>
+
             </div>
 
           </div>

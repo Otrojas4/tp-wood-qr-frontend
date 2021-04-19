@@ -21,7 +21,7 @@
               <th scope="col">Rol</th>
               <th scope="col">Estado</th>
               <th scope="col">Eliminar</th>
-              <th scope="col">Tiempo Elaboración</th>
+              <!-- <th scope="col">Editar</th> -->
 
             </tr>
           </thead>
@@ -32,7 +32,7 @@
               <td>{{item.type}}</td>
               <td>{{getState(item.status)}}</td>
               <td><button (click)="deleteUser(item.id)" class="btn btn-warning"><i-feather name="delete"></i-feather></button></td>
-              <td><i-feather name="edit"></i-feather></td>
+              <!-- <td><i-feather name="edit"></i-feather></td> -->
             </tr>
           </tbody>
         </table>
