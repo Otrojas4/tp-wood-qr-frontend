@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import showToast from 'src/app/utils/toast';
 import { MadProduct } from 'src/_models/mad-product';
+import { AuthService } from 'src/_services/auth.service';
 import { ProductMadService } from 'src/_services/product-mad.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ProductComponent implements OnInit {
 
   madProducts: Array<MadProduct> = [];
 
-  constructor(private productMadService: ProductMadService, private router: Router) { }
+  constructor(private productMadService: ProductMadService, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.getList();
@@ -53,5 +54,9 @@ export class ProductComponent implements OnInit {
         showToast('error', 'Error de servidor');
       }
     );
+  }
+
+  isAdmin() {
+    return this.authService.isAdmin();
   }
 }

@@ -2,10 +2,11 @@
 <div class="container">
   <h3 class="my-2">Muebles</h3>
 
-  <button routerLink='/product/create' routerLinkActive="router-link-active"  class="btn btn-secondary">
+  <button *ngIf="isAdmin()" routerLink='/product/create' routerLinkActive="router-link-active"  class="btn btn-secondary">
     <i-feather name="plus-circle"></i-feather>
     <span>Crear Mueble</span>
   </button>
+
   <div class="row">
     <div class="col-12"></div>
   </div>
@@ -28,8 +29,8 @@
               <th scope="col">Cod TP</th>
               <th scope="col">Cod TS</th>
               <th scope="col">Info</th>
-              <th scope="col">Editar</th>
-              <th scope="col">Eliminar</th>
+              <th *ngIf="isAdmin()" scope="col">Editar</th>
+              <th *ngIf="isAdmin()" scope="col">Eliminar</th>
               <th scope="col">QR Code</th>
             </tr>
           </thead>
@@ -47,8 +48,8 @@
               <td>{{item.primaryTrans.codTransPri}}</td>
               <td>{{item.secondaryTrans.codTransSec}}</td>
               <td><button (click)="viewProduct(item)" class="btn btn-primary"><i-feather name="eye"></i-feather></button></td>
-              <td><button (click)="editProduct(item)" class="btn btn-info"><i-feather name="edit"></i-feather></button></td>
-              <td><button (click)="deleteProduct(item)" class="btn btn-warning"><i-feather name="trash"></i-feather></button></td>
+              <td *ngIf="isAdmin()"><button (click)="editProduct(item)" class="btn btn-info"><i-feather name="edit"></i-feather></button></td>
+              <td *ngIf="isAdmin()"><button (click)="deleteProduct(item)" class="btn btn-warning"><i-feather name="trash"></i-feather></button></td>
               <td><img src="{{getImageById(item.id)}}" height="70px"></td>
             </tr>
           </tbody>

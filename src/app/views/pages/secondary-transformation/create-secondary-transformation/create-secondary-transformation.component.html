@@ -8,7 +8,7 @@
         <form  [formGroup]="createSecondaryTransForm" (submit)="createSecondaryTrans()">
           <div class="form-group">
             <label for="codTransSec">Código</label>
-            <input type="text" class="form-control" id="codTransSec" formControlName="codTransSec" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="codTransSec" formControlName="codTransSec" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             createSecondaryTransForm.get('codTransSec').touched &&
@@ -21,7 +21,7 @@
 
           <div class="form-group">
             <label for="codMachinaryOne">Código de Maquinaria 1</label>
-            <input type="text" class="form-control" id="codMachinaryOne"  formControlName="codMachinaryOne" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="codMachinaryOne"  formControlName="codMachinaryOne" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             createSecondaryTransForm.get('codMachinaryOne').touched &&
@@ -47,7 +47,7 @@
 
           <div class="form-group">
             <label for="codMachinaryTwo">Código de Maquinaria 2</label>
-            <input type="text" class="form-control" id="codMachinaryTwo" formControlName="codMachinaryTwo" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="codMachinaryTwo" formControlName="codMachinaryTwo" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             createSecondaryTransForm.get('codMachinaryTwo').touched &&
@@ -93,7 +93,7 @@
 
           <div class="form-group">
             <label for="timeElaborations">Tiempo de elaboración</label>
-            <input type="text" class="form-control" id="timeElaborations" aria-describedby="inputProductName" formControlName="timeElaborations">
+            <input (keypress)="keyPressNumbers($event)" type="text" class="form-control" id="timeElaborations" aria-describedby="inputProductName" formControlName="timeElaborations">
             <small class="form-text text-muted"
             *ngIf="
             createSecondaryTransForm.get('timeElaborations').touched &&

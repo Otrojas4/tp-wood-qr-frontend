@@ -8,7 +8,7 @@
         <form  [formGroup]="editProductForm">
           <div class="form-group">
             <label for="inputCod">Código de Producto</label>
-            <input type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
 
             <small class="form-text text-muted"
             *ngIf="
@@ -22,7 +22,7 @@
 
           <div class="form-group">
             <label for="unputcodForestGuide">Guía de Transporte Forestal</label>
-            <input type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             editProductForm.get('codForestGuide').touched &&

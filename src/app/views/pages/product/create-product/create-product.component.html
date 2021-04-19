@@ -8,7 +8,7 @@
         <form  [formGroup]="createProductForm" (submit)="createProduct()">
           <div class="form-group">
             <label for="inputCod">Código de Producto</label>
-            <input type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="inputCod" aria-describedby="inputCod" formControlName="codProduct" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             createProductForm.get('codProduct').touched &&
@@ -21,7 +21,7 @@
 
           <div class="form-group">
             <label for="unputcodForestGuide">Guía de Transporte Forestal</label>
-            <input type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="unputcodForestGuide" aria-describedby="unputcodForestGuide" formControlName="codForestGuide" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             createProductForm.get('codForestGuide').touched &&
@@ -34,7 +34,7 @@
 
           <div class="form-group">
             <label for="inputProductName">Nombre del Producto</label>
-            <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="productName" maxlength="50">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="productName" maxlength="50">
             <small class="form-text text-muted"
             *ngIf="
             createProductForm.get('productName').touched &&
@@ -79,7 +79,7 @@
 
           <div class="form-group">
             <label for="inputcodPlate">Código de Plancha</label>
-            <input type="text" class="form-control" id="inputcodPlate" aria-describedby="inputcodPlate" formControlName="codPlate" maxlength="60">
+            <input (keyup)="checkAlphanumeric($event)" (keydown)="checkAlphanumeric($event)" type="text" class="form-control" id="inputcodPlate" aria-describedby="inputcodPlate" formControlName="codPlate" maxlength="60">
             <small class="form-text text-muted"
             *ngIf="
             createProductForm.get('codPlate').touched &&
@@ -92,7 +92,7 @@
 
           <div class="form-group">
             <label for="inputProductName">Tiempo de elaboración</label>
-            <input type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="elaborationTime">
+            <input (keypress)="keyPressNumbers($event)" type="text" class="form-control" id="inputProductName" aria-describedby="inputProductName" formControlName="elaborationTime">
             <small class="form-text text-muted"
             *ngIf="
             createProductForm.get('elaborationTime').touched &&
