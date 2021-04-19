@@ -57,7 +57,7 @@ export class CreateProductComponent implements OnInit {
       woodType: new FormControl('', [Validators.required]),
       idPri: new FormControl(0, [Validators.required, Validators.min(1)]),
       idSec: new FormControl(0, [Validators.required, Validators.min(1)]),
-      imageBase: new FormControl(0, [Validators.required]),
+      imageBase: new FormControl('', [Validators.required]),
     });
   }
 

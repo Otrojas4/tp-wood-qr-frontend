@@ -16,12 +16,12 @@
       <span class="show-only-in-xl">Mueble</span>
     </span>
 
-    <span *ngIf="isLogged()" routerLink="/primary-transformation" class="link-navbar" href="#">
+    <span *ngIf="isLogged() && isAdmin()" routerLink="/primary-transformation" class="link-navbar" href="#">
       <i-feather name="sunrise"></i-feather>
       <span class="show-only-in-xl">Transformación Primaria</span>
     </span>
 
-    <span *ngIf="isLogged()" routerLink="/secondary-transformation" class="link-navbar" href="#">
+    <span *ngIf="isLogged() && isAdmin()" routerLink="/secondary-transformation" class="link-navbar" href="#">
       <i-feather name="sunset"></i-feather>
       <span class="show-only-in-xl">Transformación Secundaria</span>
     </span>

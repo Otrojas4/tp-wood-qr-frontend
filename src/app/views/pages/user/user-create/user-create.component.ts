@@ -39,7 +39,7 @@ export class UserCreateComponent implements OnInit {
         this.router.navigate(['/user-management']);
       },
       (err) => {
-        showToast('error', 'Error al crear');
+        showToast('error', 'Error al crear, cambie de usuario por favor');
       }
     );
   }

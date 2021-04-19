@@ -27,7 +27,7 @@ export class UserListComponent implements OnInit {
   }
 
   getState(status: string) {
-    return status === '1' ? 'Activo':'Inactivo';
+    return status === '1' ? 'Habilitado':'Inhabilitado';
   }
 
   deleteUser(id: number) {
