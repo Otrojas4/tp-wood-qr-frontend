@@ -83,7 +83,7 @@ export class CreatePrimaryTransformationComponent implements OnInit {
 
   checkAlphanumeric(evt) {
 
-    if (!this.isAlphaNumeric(evt.key)) {
+    if (!this.isAlphaNumeric(evt.key) && evt.key != ' ') {
       evt.preventDefault();
       return false;
     }

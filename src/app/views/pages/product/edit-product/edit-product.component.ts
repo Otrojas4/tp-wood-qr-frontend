@@ -15,6 +15,8 @@ import { SecondaryTransService } from 'src/_services/secondary-trans.service';
 })
 export class EditProductComponent implements OnInit {
 
+  imgString: string;
+
   loading = true;
 
   woodTypes = ['Nogal', 'Olmo', 'Caoba', 'Cerezo', 'Roble', 'Olivo', 'Abeto', 'Pino', 'Cedro'];
@@ -30,6 +32,8 @@ export class EditProductComponent implements OnInit {
   primaryTransList: Array<any> = [];
 
   secondaryTransList: Array<any> = [];
+
+  url: string;
 
   constructor(private productMadService: ProductMadService,
     private activatedRoute: ActivatedRoute,
@@ -73,6 +77,7 @@ export class EditProductComponent implements OnInit {
           woodType: new FormControl(this.productToEdit.woodType, [Validators.required]),
           idPri: new FormControl(this.productToEdit.primaryTrans.idPri, [Validators.required]),
           idSec: new FormControl(this.productToEdit.secondaryTrans.idSec, [Validators.required]),
+          imageBase: new FormControl(this.productToEdit.photo, [Validators.required]),
         });
 
         this.loading = false;
@@ -122,7 +127,7 @@ export class EditProductComponent implements OnInit {
 
   checkAlphanumeric(evt) {
 
-    if (!this.isAlphaNumeric(evt.key)) {
+    if (!this.isAlphaNumeric(evt.key) && evt.key != ' ') {
       evt.preventDefault();
       return false;
     }
@@ -142,5 +147,27 @@ export class EditProductComponent implements OnInit {
     return true;
   };
 
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0] && event.target.files[0].type.match('image/jpeg')) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (event : any) => {
+        const splitImgBase = event.target.result as string;
+
+        const stringToSend = splitImgBase;
+
+        this.imgString = stringToSend;
+
+        const imageBase = this.editProductForm.controls['imageBase'];
+        imageBase.setValue(this.imgString);
+
+        this.url = event.target.result;
+
+        document.getElementById('uploadInput').style.backgroundImage=`url(${this.url})`;
+      }
+    }
+  }
 
 }
