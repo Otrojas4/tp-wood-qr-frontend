@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
+import { ChangeStatus } from 'src/_models/change-status';
 import { UserWood } from 'src/_models/user-wood';
 
 @Injectable({
@@ -17,6 +18,10 @@ export class UserWoodService {
 
   createUser(userWood: UserWood) {
     return this.http.post(`${environment.backendUrlMain}/user/create`, userWood);
+  }
+
+  editUser(changeStatus: ChangeStatus) {
+    return this.http.put(`${environment.backendUrlMain}/user/edit`, changeStatus);
   }
 
   deleteUser(id: number) {

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { IconsModule } from '../../icons/icons.module';
 import { UserCreateComponent } from './user-create/user-create.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -21,6 +21,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
     ReactiveFormsModule,
     IconsModule
   ],
