@@ -42,7 +42,11 @@ export class AuthService {
   }
 
   isAdmin(): boolean {
-    return this.decodedToken.authorities.some(x => x === 'ROLE_ADMIN');
+    if (this.decodedToken) {
+      return this.decodedToken.authorities.some(x => x === 'ROLE_ADMIN');
+    } else {
+      return false;
+    }
   }
 
 }

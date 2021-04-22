@@ -24,7 +24,7 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         allowedDomains: ['localhost:8585', 'tp-wood-api-rest.azurewebsites.net'],//agregar http no funcionara
-        disallowedRoutes: [''],
+        disallowedRoutes: ['localhost:8585/mad-product', 'tp-wood-api-rest.azurewebsites.net/mad-product'],
       },
     }),
     LayoutModule,
