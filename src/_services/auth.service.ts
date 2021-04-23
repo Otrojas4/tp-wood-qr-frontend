@@ -37,6 +37,7 @@ export class AuthService {
   }
 
   logout(): void {
+    this.decodedToken = undefined;
     localStorage.removeItem('access_token_wood');
     this.router.navigate(['']);
   }
