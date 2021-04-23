@@ -34,7 +34,7 @@
 
           <div class="form-group">
             <label for="percentageOne">Eficiencia de Maquinaria </label>
-            <input type="text" class="form-control" id="percentageOne"  formControlName="percentageOne" maxlength="4">
+            <input (keyup)="keyPressNumbers($event)" (keydown)="keyPressNumbers($event)" type="text" class="form-control" id="percentageOne"  formControlName="percentageOne" maxlength="2">
             <small class="form-text text-muted"
             *ngIf="
             createSecondaryTransForm.get('percentageOne').touched &&
@@ -60,7 +60,7 @@
 
           <div class="form-group">
             <label for="percentageTwo">Eficiencia de Maquinaria 2</label>
-            <input type="text" class="form-control" id="percentageTwo"  formControlName="percentageTwo" maxlength="4">
+            <input (keyup)="keyPressNumbers($event)" (keydown)="keyPressNumbers($event)" type="text" class="form-control" id="percentageTwo"  formControlName="percentageTwo" maxlength="2">
             <small class="form-text text-muted"
             *ngIf="
             createSecondaryTransForm.get('percentageTwo').touched &&

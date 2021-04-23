@@ -46,6 +46,9 @@ export class CreateSecondaryTransformationComponent implements OnInit {
 
     primaryTransformationToCreate.dateElaborations = date.toISOString();
 
+    primaryTransformationToCreate.percentageOne = primaryTransformationToCreate.percentageOne + '%';
+    primaryTransformationToCreate.percentageTwo = primaryTransformationToCreate.percentageTwo + '%';
+
 
     this.secondaryTransService.createSecondaryTrans(primaryTransformationToCreate).subscribe(
       (res) => {
