@@ -76,7 +76,7 @@ export class CreateProductComponent implements OnInit {
           this.router.navigate(['/product']);
         },
         (err) => {
-          showToast('error', 'Error al crear');
+          showToast('error', err.error.localizedMessage);
         }
       );
     }
@@ -84,6 +84,11 @@ export class CreateProductComponent implements OnInit {
   }
 
   onSelectFile(event) {
+    if (event.target.files[0].size > 78768) {
+      showToast('info', 'La imagen no debe superar más de 80KB');
+      return;
+    }
+
     if (event.target.files && event.target.files[0] && event.target.files[0].type.match('image/jpeg')) {
       const reader = new FileReader();
 
